@@ -1,16 +1,18 @@
 <template>
   <div>
-    <h3>Result</h3>
-    <p>This is results: {{ result }}</p>
+    <p>This is name results: {{ nameResult }}</p>
   </div>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
     computed: {
-      result () {
-        return this.$store.getters.tenResult
-      }
+      // ... Them mapGetters vao ham cumputed JS 2015
+      ...mapGetters([
+        'nameResult'
+      ])
     }
   }
 </script>
